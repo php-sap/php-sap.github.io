@@ -9,7 +9,7 @@ PHP/SAP defines an layer of abstraction between actual SAP remote function calls
 
 ## The motivation
 
-In case you have legacy code written for PHP <= 5.x using one of these PHP modules to call SAP remote functions, and you need to update this code to a PHP version >= 7.x, this project is for you.
+In case you have legacy code written for PHP <= 5.x using a PHP module to call SAP remote functions, and you need to update this code to a PHP version >= 7.x, this project is for you.
 
 There are currently several open source PHP modules available that are compiled using the SAP RFC SDK or SAP Netweaver RFC SDK. Each one of them handles the main tasks, connecting and calling a remote function, quite differently. To complicate things, none of them are available for old and new versions of PHP.
 
