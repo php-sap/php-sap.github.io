@@ -1,0 +1,42 @@
+@startuml
+digraph G {
+    node [shape=box];
+    compound=true;
+    splines=ortho;
+    subgraph cluster1 {
+        color=blue;
+        node [color=blue];
+        subgraph cluster11 {
+            label="PHP 7.x"
+            sapnwrfc7 [label="sapnwrfc by Gregor Kralik"];
+        }
+        subgraph cluster12 {
+            label="PHP 5.x"
+            sapnwrfc5 [label="sapnwrfc by Piers Harding"];
+            saprfc [label="saprfc by Eduard Koucky"];
+        }
+    }
+    subgraph cluster2 {
+        color=green;
+        node [color=green];
+        label="phpsap/interfaces"
+        subgraph cluster21 {
+            label="phpsap/common"
+            "phpsap/saprfc-koucky" -> saprfc [color=green];
+            "phpsap/saprfc-harding" -> sapnwrfc5 [color=green];
+            "phpsap/saprfc-kralik" -> sapnwrfc7 [color=green];
+        }
+    }
+    subgraph cluster3 {
+        color=red;
+        node [color=red];
+        label="your code";
+        function1;
+        function2;
+        function3 [label="..."];
+    }
+    function1 -> "phpsap/saprfc-koucky" [lhead=cluster2 color=red];
+    function2 -> "phpsap/saprfc-harding" [lhead=cluster2 color=red];
+    function3 -> "phpsap/saprfc-kralik" [lhead=cluster2 color=red];
+}
+@enduml
