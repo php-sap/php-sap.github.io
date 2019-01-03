@@ -7,7 +7,7 @@ PHP/SAP defines a layer of abstraction between actual SAP remote function calls
  and your PHP-Code. As to why this project was created, you can read the
  [motivation](motivation).
 
-[![PHP/SAP](res/php-sap.png)](res/php-sap.svg)
+[![PHP/SAP](res/php-sap.svg)](res/php-sap.svg)
 
 The [interfaces][interfaces] define a common denominator on how to configure a
  connection to SAP, prepare a SAP remote function call, and invoke a SAP remote
