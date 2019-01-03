@@ -1,7 +1,7 @@
 **ATTENTION: THIS IS WORK IN PROGRESS AND NOT TO BE USED UNTIL THIS MESSAGE
  DISAPPEARS!**
 
-## What is this?
+## About PHP/SAP
 
 PHP/SAP defines a layer of abstraction between actual SAP remote function calls
  and your PHP-Code. As to why this project was created, you can read the
