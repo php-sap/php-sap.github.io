@@ -17,7 +17,7 @@ I inherited a project running on PHP 5.5.x containing undocumented code dealing
 4. The configuration has to be as interchangeable as possible between the PHP
    modules.
 
-Example:
+### Example
 
 ```php
 <?php
