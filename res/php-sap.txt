@@ -31,12 +31,12 @@ digraph G {
         color=red;
         node [color=red];
         label="your code";
-        function1;
-        function2;
-        function3 [label="..."];
+        yourcode1 [label="connect->prepare->invoke"];
+        yourcode2 [label="function"];
+        yourcode3 [label="..."];
     }
-    function1 -> "phpsap/saprfc-koucky" [lhead=cluster2 color=red];
-    function2 -> "phpsap/saprfc-harding" [lhead=cluster2 color=red];
-    function3 -> "phpsap/saprfc-kralik" [lhead=cluster2 color=red];
+    yourcode1 -> "phpsap/saprfc-koucky" [lhead=cluster2 color=red];
+    yourcode2 -> "phpsap/saprfc-harding" [lhead=cluster2 color=red];
+    yourcode3 -> "phpsap/saprfc-kralik" [lhead=cluster2 color=red];
 }
 @enduml
