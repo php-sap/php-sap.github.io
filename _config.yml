@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
 title: PHP/SAP
-description: ""
+description: "SAP remote function call abstraction layer for PHP"
 show_downloads: false
