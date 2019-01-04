@@ -9,7 +9,7 @@ PHP/SAP defines a layer of abstraction between actual SAP remote function calls
 
 [![PHP/SAP](res/php-sap.svg)](res/php-sap.svg)
 
-The [interfaces][interfaces] define a common denominator on how to configure a
+The [interfaces](interfaces) define a common denominator on how to configure a
  connection to SAP, prepare a SAP remote function call, and invoke a SAP remote
  function call.
 
@@ -20,5 +20,4 @@ The module specific implementations contain code that is specific to [the
  underlying PHP-module](php-modules).
 
 
-[interfaces]: https://github.com/php-sap/interfaces "Interfaces for implementing the PHP/SAP API."
 [common]: https://github.com/php-sap/common "Exceptions and abstract classes containing logic for PHP/SAP that is not specific to the underlying PHP module."
