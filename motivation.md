@@ -12,8 +12,10 @@ I inherited a project running on PHP 5.5.x containing undocumented code dealing
 2. The code in my project dealing with SAP remote function calls has to work
    for several [PHP modules](php-modules) and it still has to work, in case
    of a switch to a different way of communicating with SAP.
-3. Any in- and output of a SAP remote function call has to be defined as
-   methods as a way of documentation.
+3. Any parameters of a SAP remote function call have to be defined as methods
+   as a way of documenting the API of a SAP remote function call. As a result
+   this documentation will be available via your editors autocomplete
+   functionality.
 4. The configuration has to be as interchangeable as possible between the PHP
    modules.
 
