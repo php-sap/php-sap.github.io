@@ -4,8 +4,8 @@
 ## About PHP/SAP
 
 PHP/SAP defines a layer of abstraction between actual SAP remote function calls
- and your PHP-Code. As to why this project was created, you can read the
- [motivation](motivation).
+ and your PHP-Code. As to why this project has been created and which goals it
+ wants to achieve, you can read the [motivation](motivation).
 
 [![PHP/SAP](res/php-sap.svg)](res/php-sap.svg)
 
@@ -18,6 +18,7 @@ The [common classes and exceptions][common] add logic that is not specific to
 
 The module specific implementations contain code that is specific to [the
  underlying PHP-module](php-modules).
+
 
 [interfaces]: https://github.com/php-sap/interfaces "Interfaces for implementing the PHP/SAP API."
 [common]: https://github.com/php-sap/common "Exceptions and abstract classes containing logic for PHP/SAP that is not specific to the underlying PHP module."
