@@ -18,7 +18,7 @@ I inherited a project running on PHP 5.5.x containing undocumented code dealing
 4. The configuration has to be as interchangeable as possible between the PHP
    modules.
 
-### Example
+### Example 1: connect->prepare->invoke
 
 ```php
 <?php
@@ -40,6 +40,71 @@ $connection = new SapRfcConnection(new SapRfcConfigA($config));
 $function = $connection->prepareFunction('remoteFunctionName');
 //call the remote function
 $result = $function->invoke(['paramName' => 'value']);
+```
+
+### Example 2: extend remote function call
+
+```php
+<?php
+
+use phpsap\common\AbstractRemoteFunctionCall;
+use phpsap\interfaces\IConfig;
+use phpsap\saprfc\SapRfcConnection;
+
+class ZMyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
+{
+    /**
+     * Create a connection instance using the given config.
+     * @param \phpsap\interfaces\IConfig $config
+     * @return \phpsap\saprfc\SapRfcConnection
+     */
+    protected function createConnectionInstance(IConfig $config)
+    {
+        return new SapRfcConnection($config);
+    }
+
+    /**
+     * Define the name of the remote function.
+     * @return string
+     */
+    public function getName()
+    {
+        return 'Z_My_Cool_Sap_Remote_Function';
+    }
+
+    /**
+     * Create the SAP remote function call parameters as code.
+     * @param int $value
+     * @return $this
+     */
+    public function paramA($value)
+    {
+        if (!is_int($value)) {
+            throw new InvalidArgumentException('Expected value to be int.');
+        }
+        return $this->setParam('paramA', $value);
+    }
+}
+```
+```php
+<?php
+
+use phpsap\saprfc\SapRfcConfigA;
+
+//stored configuration, JSON encoded
+$config = '{
+    "ashost": "sap.example.com",
+    "sysnr": "001",
+    "client": "01",
+    "user": "username",
+    "passwd": "password"
+}';
+//create a new SAP remote function instance using the stored configuration
+$zMyCoolSapRemoteFuntion = new ZMyCoolSapRemoteFunction(new SapRfcConfigA($config));
+//set the parameter for the SAP remote function
+$zMyCoolSapRemoteFuntion->paramA(123);
+//call the SAP remote function
+$result = $zMyCoolSapRemoteFuntion->invoke();
 ```
 
 [koucky]: http://saprfc.sourceforge.net/ "SAPRFC extension module for PHP"
