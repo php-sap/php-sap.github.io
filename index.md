@@ -13,11 +13,8 @@ The [interfaces](interfaces) define a common denominator on how to configure a
  connection to SAP, prepare a SAP remote function call, and invoke a SAP remote
  function call.
 
-The [common classes and exceptions][common] add logic that is not specific to
+The [common classes and exceptions](common) add logic that is not specific to
  the underlying PHP module.
 
 The module specific implementations contain code that is specific to [the
  underlying PHP-module](php-modules).
-
-
-[common]: https://github.com/php-sap/common "Exceptions and abstract classes containing logic for PHP/SAP that is not specific to the underlying PHP module."
