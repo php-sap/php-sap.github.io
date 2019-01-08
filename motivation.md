@@ -14,7 +14,7 @@ I inherited a project running on PHP 5.5.x containing undocumented code dealing
    of a switch to a different way of communicating with SAP.
 3. Any parameters of a SAP remote function call have to be defined as methods
    as a way of documenting the API of a SAP remote function call via the
-   editors autocomplete functionality. :bowtie:
+   editors autocomplete functionality.
 4. The configuration has to be as interchangeable as possible between the PHP
    modules.
 
