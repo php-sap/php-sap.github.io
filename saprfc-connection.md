@@ -168,4 +168,4 @@ $same = ($connection1->getId() === $connection2->getId());
 
 [Go back to usage overview](usage)
  | [Go back to configuring a connection](saprfc-config)
- | [Continue with invoking a function call](saprfc-connection)
+ | [Continue with invoking a function call](saprfc-function)
