@@ -18,3 +18,10 @@ The [common classes and exceptions](common) add logic that is not specific to
 
 The module specific implementations contain code that is specific to [the
  underlying PHP-module](php-modules).
+
+## Usage documentation
+
+* [Usage overview](usage)
+    - [Configure a connection](saprfc-config)
+    - [Establish a connection](saprfc-connection)
+    - [Invoke a function call](saprfc-function)
