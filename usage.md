@@ -1,7 +1,7 @@
 ## Usage overview
 
 Use `composer require` to add PHP/SAP to your project. Depending on the
- [PHP module](php-modules) you need to require a different PHP/SAP composer
+ [PHP module](php-modules) you need to require a certain PHP/SAP composer
  package.
 
 The namespace of the library is `\phpsap\saprfc`.

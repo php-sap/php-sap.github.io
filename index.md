@@ -19,7 +19,31 @@ The [common classes and exceptions](common) add logic that is not specific to
 The module specific implementations contain code that is specific to [the
  underlying PHP-module](php-modules).
 
-## Usage documentation
+## TL;DR
+
+Especially short explanation for people in a hurry.
+
+Use `composer require` to add PHP/SAP to your project. Depending on the
+ [PHP module](php-modules) you need to require a certain PHP/SAP composer
+ package.
+
+```php
+<?php
+use phpsap\saprfc\SapRfcConfigA;
+use phpsap\saprfc\SapRfcConnection;
+
+$result = (new SapRfcConnection(new SapRfcConfigA([
+  'ashost' => 'sap.example.com',
+  'sysnr' => '001',
+  'client' => '002',
+  'user' => 'username',
+  'passwd' => 'password'
+])))
+    ->prepareFunction('MY_COOL_SAP_REMOTE_FUNCTION')
+    ->invoke(['INPUT_PARAM' => 'value']);
+```
+ 
+## Documentation
 
 * [Usage overview](usage)
     - [Configure a connection](saprfc-config)
