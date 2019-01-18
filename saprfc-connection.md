@@ -118,7 +118,7 @@ $config = new SapRfcConfigA([
 $connection = new SapRfcConnection($config);
 
 try {
-    $function = $connection->prepareFunction('HELLO_WORLD');
+    $remoteFunction = $connection->prepareFunction('MY_COOL_SAP_REMOTE_FUNCTION');
 } catch (\phpsap\interfaces\exceptions\IConnectionFailedException $exception) {
     printf(
         'Establishing a connection failed. Message: %s',

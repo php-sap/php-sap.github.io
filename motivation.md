@@ -39,7 +39,7 @@ $config = '{
 //establish a connection using the stored configuration
 $connection = new SapRfcConnection(new SapRfcConfigA($config));
 //prepare a function call
-$function = $connection->prepareFunction('remoteFunctionName');
+$function = $connection->prepareFunction('MY_COOL_SAP_REMOTE_FUNCTION');
 //call the remote function
 $result = $function->invoke(['paramName' => 'value']);
 ```
@@ -53,7 +53,7 @@ use phpsap\common\AbstractRemoteFunctionCall;
 use phpsap\interfaces\IConfig;
 use phpsap\saprfc\SapRfcConnection;
 
-class ZMyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
+class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
 {
     /**
      * Create a connection instance using the given config.
@@ -71,7 +71,7 @@ class ZMyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
      */
     public function getName()
     {
-        return 'Z_My_Cool_Sap_Remote_Function';
+        return 'MY_COOL_SAP_REMOTE_FUNCTION';
     }
 
     /**
@@ -102,11 +102,11 @@ $config = '{
     "passwd": "password"
 }';
 //create a new SAP remote function instance using the stored configuration
-$zMyCoolSapRemoteFuntion = new ZMyCoolSapRemoteFunction(new SapRfcConfigA($config));
+$remoteFunction = new MyCoolSapRemoteFunction(new SapRfcConfigA($config));
 //set the parameter for the SAP remote function
-$zMyCoolSapRemoteFuntion->paramA(123);
+$remoteFunction->paramA(123);
 //call the SAP remote function
-$result = $zMyCoolSapRemoteFuntion->invoke();
+$result = $remoteFunction->invoke();
 ```
 
 [koucky]: http://saprfc.sourceforge.net/ "SAPRFC extension module for PHP"

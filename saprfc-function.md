@@ -24,7 +24,7 @@ $config = new SapRfcConfigA([
 $connection = new SapRfcConnection($config);
 
 try {
-    $function = $connection->prepareFunction('HELLO WORLD');
+    $remoteFunction = $connection->prepareFunction('MY_COOL_SAP_REMOTE_FUNCTION');
 } catch (\phpsap\interfaces\exceptions\IConnectionFailedException $exception) {
     printf(
       'Establishing a connection failed. Message: %s',
@@ -32,16 +32,16 @@ try {
     );
     die();
 } catch (\phpsap\interfaces\exceptions\IUnknownFunctionException $exception) {
-   printf(
+    printf(
        'The requested remote function does not exist. Message: %s',
        $exception->getMessage()
-   );
-   die();
+    );
+    die();
 }
 
 //get result from remote function call
 try {
-    $result = $function->invoke();
+    $result = $remoteFunction->invoke();
 } catch (\phpsap\interfaces\exceptions\IFunctionCallException $exception) {
     printf(
         'The remote function call failed. Message: %s',
@@ -76,28 +76,28 @@ $config = new SapRfcConfigA([
 
 //leave out try+catch for simplification
 $connection = new SapRfcConnection($config);
-$function = $connection->prepareFunction('HELLO');
+$remoteFunction = $connection->prepareFunction('MY_COOL_SAP_REMOTE_FUNCTION');
 
 //set remote function parameters IV_RED to 'green' and IV_BLUE to 'yellow'
-$function->setParam('IV_RED', 'green');
-$function->setParam('IV_BLUE', 'yellow');
+$remoteFunction->setParam('IV_RED', 'green');
+$remoteFunction->setParam('IV_BLUE', 'yellow');
 
 //overwrite remote function parameter IV_RED with 'yellow'
-$function->setParam('IV_RED', 'yellow');
+$remoteFunction->setParam('IV_RED', 'yellow');
 
 //remove the parameters IV_RED and IV_BLUE
-$function->reset();
+$remoteFunction->reset();
 
 //set remote function parameters IV_RED to 'red' and IV_BLUE to 'blue'
-$function->setParam('IV_RED', 'red');
-$function->setParam('IV_BLUE', 'blue');
+$remoteFunction->setParam('IV_RED', 'red');
+$remoteFunction->setParam('IV_BLUE', 'blue');
 
 /**
  * Invoke a remote function call using the parameters IV_RED='red' and
  * IV_BLUE='green' by overwriting IV_BLUE upon invoke.
  */ 
 try {
-    $result1 = $function->invoke(['IV_BLUE' => 'green']);
+    $result1 = $remoteFunction->invoke(['IV_BLUE' => 'green']);
 } catch (\phpsap\interfaces\exceptions\IFunctionCallException $exception) {
     printf(
         'The remote function call failed. Message: %s',
@@ -106,14 +106,14 @@ try {
 }
 
 //overwrite remote function parameter IV_RED with 'green'
-$function->setParam('IV_RED', 'green');
+$remoteFunction->setParam('IV_RED', 'green');
 
 /**
  * Invoke a remote function call using the parameters IV_RED='green' and
  * IV_BLUE='green'.
  */ 
 try {
-    $result2 = $function->invoke();
+    $result2 = $remoteFunction->invoke();
 } catch (\phpsap\interfaces\exceptions\IFunctionCallException $exception) {
     printf(
         'The remote function call failed. Message: %s',
