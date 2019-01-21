@@ -49,23 +49,11 @@ $result = $function->invoke(['paramName' => 'value']);
 ```php
 <?php
 
-use phpsap\classes\AbstractRemoteFunctionCall;
-use phpsap\interfaces\IConfig;
-use phpsap\saprfc\SapRfcConnection;
+use phpsap\saprfc\AbstractRemoteFunctionCall;
 use kbATeam\TypeCast\TypeCastValue;
 
 class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
 {
-    /**
-     * Create a connection instance using the given config.
-     * @param \phpsap\interfaces\IConfig $config
-     * @return \phpsap\saprfc\SapRfcConnection
-     */
-    protected function createConnectionInstance(IConfig $config)
-    {
-        return new SapRfcConnection($config);
-    }
-
     /**
      * Define the name of the remote function.
      * @return string
