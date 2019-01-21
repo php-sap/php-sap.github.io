@@ -49,9 +49,10 @@ $result = $function->invoke(['paramName' => 'value']);
 ```php
 <?php
 
-use phpsap\common\AbstractRemoteFunctionCall;
+use phpsap\classes\AbstractRemoteFunctionCall;
 use phpsap\interfaces\IConfig;
 use phpsap\saprfc\SapRfcConnection;
+use kbATeam\TypeCast\TypeCastValue;
 
 class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
 {
@@ -85,6 +86,17 @@ class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
             throw new InvalidArgumentException('Expected value to be int.');
         }
         return $this->setParam('paramA', $value);
+    }
+    
+    /**
+     * Define typecasting for SAP remote function return value. 
+     * @return \kbATeam\TypeCast\TypeCastValue
+     */
+    protected function getReturnTypecast()
+    {
+        return new TypeCastValue(function ($res) {
+            return $res['E_OK'] !== 'X';
+        });
     }
 }
 ```
