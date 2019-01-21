@@ -49,3 +49,4 @@ $result = (new SapRfcConnection(new SapRfcConfigA([
     - [Configure a connection](saprfc-config)
     - [Establish a connection](saprfc-connection)
     - [Invoke a function call](saprfc-function)
+* [Extend `AbstractRemoteFunctionCall`](abstract-rfc)

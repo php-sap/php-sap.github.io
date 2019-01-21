@@ -10,4 +10,9 @@ In order to call a SAP remote function, you need to
  [configure](saprfc-config) a [connection](saprfc-connection) and then invoke a
  [function](saprfc-function).
 
+In case you want to use the SAP remote function API like any other PHP class,
+ you can [extend `AbstractRemoteFunctionCall`](abstract-rfc) and you will get
+ implicit documentation of your SAP remote function call parameters and the
+ return value(s).
+
 [Continue reading on how to configure a connection](saprfc-config).
