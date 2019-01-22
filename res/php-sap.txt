@@ -31,12 +31,10 @@ digraph G {
         color=red;
         node [color=red];
         label="your code";
-        yourcode1 [label="connect➔prepare➔invoke"];
-        yourcode2 [label="AbstractRemoteFunctionCall"];
-        yourcode3 [label="YourFunction"];
+        yourcode1 [label="connect ➔ prepare ➔ invoke"];
+        yourcode2 [label="extending AbstractRemoteFunctionCall"];
     }
     yourcode1 -> "php-sap/saprfc-koucky" [lhead=cluster2 color=red];
-    yourcode2 -> "php-sap/saprfc-harding" [lhead=cluster2 color=red];
-    yourcode3 -> yourcode2 [color=red];
+    yourcode2 -> "php-sap/saprfc-kralik" [lhead=cluster2 color=red];
 }
 @enduml
