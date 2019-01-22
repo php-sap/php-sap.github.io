@@ -1,11 +1,10 @@
 ## Usage: extending `AbstractRemoteFunctionCall`
 
-Let's assume you have a SAP remote function called
- `MY_COOL_SAP_REMOTE_FUNCTION`, that takes a date as input value and returns
-  the according week.
+Let's assume you have a SAP remote function called `Z_GET_WEEK`, that takes a
+ date as input value and returns the according week.
 
-The class `MyCoolSapRemoteFunction` contains only code, that configures the API
- of your SAP remote function:
+The class `ZGetWeek` contains only code, that configures the API of your SAP
+ remote function:
 
 * `getName()` returns the SAP remote function name.
 * `setDate()` sets the SAP remote function parameter.
@@ -20,11 +19,11 @@ use kbATeam\TypeCast\TypeCastValue;
 use phpsap\DateTime\SapDateTime;
 
 /**
- * Class MyCoolSapRemoteFunction
+ * Class ZGetWeek
  *
  * Get the calendar week to a given date.
  */
-class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
+class ZGetWeek extends AbstractRemoteFunctionCall
 {
     /**
      * Define the name of the remote function.
@@ -32,7 +31,7 @@ class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
      */
     public function getName()
     {
-        return 'MY_COOL_SAP_REMOTE_FUNCTION';
+        return 'Z_GET_WEEK';
     }
 
     /**
@@ -82,7 +81,7 @@ $config = '{
     "passwd": "password"
 }';
 //create a new SAP remote function instance using the stored configuration
-$dateToWeek = new MyCoolSapRemoteFunction(new SapRfcConfigA($config));
+$dateToWeek = new ZGetWeek(new SapRfcConfigA($config));
 /**
  * Set the parameter for the SAP remote function.
  * Your editor shows you the available parameters of the SAP remote function
