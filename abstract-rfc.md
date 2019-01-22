@@ -9,7 +9,7 @@ The class `ZGetWeek` contains only code, that configures the API of your SAP
 * `getName()` returns the SAP remote function name.
 * `setDate()` sets the SAP remote function parameter.
 * `invoke()` casts the result of the SAP remote function call to a
-  DateTime object.
+  [DateTime](datetime) object.
 
 ```php
 <?php
