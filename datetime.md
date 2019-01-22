@@ -5,11 +5,11 @@ SAP defines week, date, time and timestamp formats, that differ from the ISO
  [PHPs DateTime class][phpdatetime].
 
 Format    | SAP                                        | ISO
---------- | ------------------------------------------ | -----------------------------------------
+--------- | ------------------------------------------ | --------------------------------------
 week      | `<calendar-week-year><calendar-week>`      | `<calendar-week-year>W<calendar-week>`
 date      | `<year><month><day>`                       | `<year>-<month>-<day>`
 time      | `<hour><minute><second>`                   | `<hour>-<minute>-<second>`
-timestamp | `<year><month><day><hour><minute><second>` | `<seconds-since-1970-01-01-00:00:00-UTC>`
+timestamp | `<year><month><day><hour><minute><second>` | `<seconds-since-1970-01-01>`
 
 [SapDateTime][sapdatetime] extends [PHPs DateTime class][phpdatetime] by these
  SAP-specific formats:
