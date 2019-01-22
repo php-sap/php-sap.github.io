@@ -20,7 +20,7 @@ That lead to the following requirements:
 4. The configuration has to be as interchangeable as possible between the PHP
    modules.
 
-### Example 1: connect->prepare->invoke
+### Example 1: connect ➔ prepare ➔ invoke
 
 ```php
 <?php
