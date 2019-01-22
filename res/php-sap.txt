@@ -19,12 +19,12 @@ digraph G {
     subgraph cluster2 {
         color=green;
         node [color=green];
-        label="phpsap/interfaces"
+        label="php-sap/interfaces"
         subgraph cluster21 {
-            label="phpsap/common"
-            "phpsap/saprfc-koucky" -> saprfc [color=green];
-            "phpsap/saprfc-harding" -> sapnwrfc5 [color=green];
-            "phpsap/saprfc-kralik" -> sapnwrfc7 [color=green];
+            label="php-sap/common"
+            "php-sap/saprfc-koucky" -> saprfc [color=green];
+            "php-sap/saprfc-harding" -> sapnwrfc5 [color=green];
+            "php-sap/saprfc-kralik" -> sapnwrfc7 [color=green];
         }
     }
     subgraph cluster3 {
@@ -35,8 +35,8 @@ digraph G {
         yourcode2 [label="function"];
         yourcode3 [label="..."];
     }
-    yourcode1 -> "phpsap/saprfc-koucky" [lhead=cluster2 color=red];
-    yourcode2 -> "phpsap/saprfc-harding" [lhead=cluster2 color=red];
-    yourcode3 -> "phpsap/saprfc-kralik" [lhead=cluster2 color=red];
+    yourcode1 -> "php-sap/saprfc-koucky" [lhead=cluster2 color=red];
+    yourcode2 -> "php-sap/saprfc-harding" [lhead=cluster2 color=red];
+    yourcode3 -> "php-sap/saprfc-kralik" [lhead=cluster2 color=red];
 }
 @enduml
