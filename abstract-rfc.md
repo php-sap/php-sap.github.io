@@ -8,14 +8,13 @@ The class `ZGetWeek` contains only code, that configures the API of your SAP
 
 * `getName()` returns the SAP remote function name.
 * `setDate()` sets the SAP remote function parameter.
-* `getReturnTypecast()` casts the result of the SAP remote function call to a
+* `invoke()` casts the result of the SAP remote function call to a
   DateTime object.
 
 ```php
 <?php
 
 use phpsap\saprfc\AbstractRemoteFunctionCall;
-use kbATeam\TypeCast\TypeCastValue;
 use phpsap\DateTime\SapDateTime;
 
 /**
@@ -46,14 +45,19 @@ class ZGetWeek extends AbstractRemoteFunctionCall
     }
     
     /**
-     * Define typecasting for SAP remote function return value. 
-     * @return \kbATeam\TypeCast\TypeCastValue
+     * Call SAP remote function to get the week of the given date.
+     * @param null|array $params Optional parameter array.
+     * @return phpsap\DateTime\SapDateTime The calendar week of the given date.
+     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
+     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @throws \phpsap\exceptions\FunctionCallException
      */
-    protected function getReturnTypecast()
+    protected function invoke($params = null)
     {
-        return new TypeCastValue(function ($result) {
-            return SapDateTime::createFromFormat(SapDateTime::SAP_WEEK, $result['E_WEEK']);
-        });
+        //parent returns array
+        $result = parent::invoke($params);
+        //return SapDateTime object
+        return SapDateTime::createFromFormat(SapDateTime::SAP_WEEK, $result['E_WEEK']);
     }
 }
 ```

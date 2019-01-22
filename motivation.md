@@ -50,7 +50,6 @@ $result = $function->invoke(['paramName' => 'value']);
 <?php
 
 use phpsap\saprfc\AbstractRemoteFunctionCall;
-use kbATeam\TypeCast\TypeCastValue;
 
 class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
 {
@@ -77,14 +76,18 @@ class MyCoolSapRemoteFunction extends AbstractRemoteFunctionCall
     }
     
     /**
-     * Define typecasting for SAP remote function return value. 
-     * @return \kbATeam\TypeCast\TypeCastValue
+     * Call SAP remote function to see, if paramA succeeds.
+     * @param null|array $params Optional parameter array.
+     * @return bool success?
+     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
+     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @throws \phpsap\exceptions\FunctionCallException
      */
-    protected function getReturnTypecast()
+    protected function invoke($params = null)
     {
-        return new TypeCastValue(function ($res) {
-            return $res['E_OK'] !== 'X';
-        });
+        //parent returns array
+        $result = parent::invoke($params);
+        return $result['E_OK'] !== 'X';
     }
 }
 ```
