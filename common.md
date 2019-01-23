@@ -12,7 +12,6 @@ The following common classes are available in namespace `phpsap\common`, and the
 ### Connection
 
 * `AbstractConnection` Manages a PHP/SAP connection instance implementing `\phpsap\interfaces\IConnection`.
-* `ConnectionPool` Provides a static pool of available PHP/SAP connections. The connections are organized using their connection IDs. The connection ID ensures, that only one connection per configuration is established.
 
 ### Function
 
