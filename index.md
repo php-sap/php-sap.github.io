@@ -5,8 +5,7 @@
 
 PHP/SAP defines a layer of abstraction between actual SAP remote function calls
  and your PHP-Code. As to why this project has been created and which goals it
- wants to achieve, you can read the [motivation](motivation). See the
- [status page](status) on build status, the code quality and the test coverage. 
+ wants to achieve, you can read the [motivation](motivation).
 
 [![PHP/SAP](res/php-sap.svg)](res/php-sap.svg)
 
