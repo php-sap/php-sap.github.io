@@ -94,10 +94,10 @@ $remoteFunction->setParam('IV_BLUE', 'blue');
 
 /**
  * Invoke a remote function call using the parameters IV_RED='red' and
- * IV_BLUE='green' by overwriting IV_BLUE upon invoke.
+ * IV_BLUE='blue'.
  */ 
 try {
-    $result1 = $remoteFunction->invoke(['IV_BLUE' => 'green']);
+    $result1 = $remoteFunction->invoke();
 } catch (\phpsap\interfaces\exceptions\IFunctionCallException $exception) {
     printf(
         'The remote function call failed. Message: %s',
@@ -110,7 +110,7 @@ $remoteFunction->setParam('IV_RED', 'green');
 
 /**
  * Invoke a remote function call using the parameters IV_RED='green' and
- * IV_BLUE='green'.
+ * IV_BLUE='blue'.
  */ 
 try {
     $result2 = $remoteFunction->invoke();

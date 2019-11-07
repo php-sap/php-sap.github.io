@@ -16,7 +16,6 @@ The following common classes are available in namespace `phpsap\common`, and the
 ### Function
 
 * `AbstractFunction` Manages a PHP/SAP remote function call implementing `\phpsap\interfaces\IFunction`.
-* `AbstractRemoteFunctionCall` Proxy class to simplify PHP/SAP remote function calls implementing `\phpsap\interfaces\IFunction`.
 
 ### Exceptions
 

@@ -112,7 +112,6 @@ $config = new SapRfcConfigA($configArray);
 
 [Go back to usage overview](usage)
  | [Continue with establishing a connection](saprfc-connection)
- | [Continue reading about extending `AbstractRemoteFunctionCall`](abstract-rfc)
 
 [jsonserializable]: http://php.net/manual/en/class.jsonserializable.php
 [parse_ini_file]: http://php.net/manual/de/function.parse-ini-file.php
