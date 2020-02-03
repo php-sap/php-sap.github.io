@@ -8,12 +8,12 @@ digraph G {
         node [color=blue];
         subgraph cluster11 {
             label="PHP 7.x"
-            sapnwrfc7 [label="sapnwrfc by Gregor Kralik"];
+            sapnwrfc7 [label="G. Kraliks sapnwrfc"];
         }
         subgraph cluster12 {
             label="PHP 5.x"
-            sapnwrfc5 [label="sapnwrfc by Piers Harding"];
-            saprfc [label="saprfc by Eduard Koucky"];
+            sapnwrfc5 [label="P. Hardings sapnwrfc"];
+            saprfc [label="E. Kouckys saprfc"];
         }
     }
     subgraph cluster2 {
