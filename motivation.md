@@ -17,28 +17,4 @@ That lead to the following requirements:
 3. The configuration has to be as interchangeable as possible between the PHP
    modules.
 
-### Example: connect ➔ prepare ➔ invoke
-
-```php
-<?php
-
-use phpsap\saprfc\SapRfcConnection;
-use phpsap\saprfc\SapRfcConfigA;
-
-//stored configuration, JSON encoded
-$config = '{
-    "ashost": "sap.example.com",
-    "sysnr": "001",
-    "client": "01",
-    "user": "username",
-    "passwd": "password"
-}';
-//establish a connection using the stored configuration
-$connection = new SapRfcConnection(new SapRfcConfigA($config));
-//prepare a function call
-$function = $connection->prepareFunction('MY_COOL_SAP_REMOTE_FUNCTION');
-//call the remote function
-$result = $function->setParam('paramName', 'value')->invoke();
-```
-
 [koucky]: http://saprfc.sourceforge.net/ "SAPRFC extension module for PHP"
