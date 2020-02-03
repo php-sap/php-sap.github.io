@@ -1,27 +1,29 @@
 ## About PHP/SAP
 
 PHP/SAP defines a layer of abstraction between actual SAP remote function calls
- and your PHP-Code. As to why this project has been created and which goals it
- wants to achieve, you can read the [motivation](motivation).
+and your PHP-Code.
+
+As to why this project has been created and which goals it
+wants to achieve, you can read the [motivation](motivation).
 
 ![PHP/SAP](res/php-sap.png)
 
 The interfaces define a common denominator on how to configure a
- connection to SAP, prepare a SAP remote function call, and invoke a SAP remote
- function call.
+connection to SAP, prepare a SAP remote function call, and invoke a SAP remote
+function call.
 
 The common classes and exceptions add logic that is not specific to
- the underlying PHP module.
+the underlying PHP module.
 
 The module specific implementations contain code that is specific to [the
- underlying PHP-module](php-modules).
+underlying PHP-module](php-modules).
 
 ## TL;DR
 
 Especially short explanation for people in a hurry.
 
 Use `composer require` to add PHP/SAP to your project. Depending on the
- [PHP module](php-modules) you need to require a certain PHP/SAP package.
+[PHP module](php-modules) you need to require a certain PHP/SAP package.
  
 `composer require php-sap/saprfc-koucky`   
 or   
