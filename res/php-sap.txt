@@ -31,8 +31,8 @@ digraph G {
         color=red;
         node [color=red];
         label="your code";
-        yourcode [label="connect ➔ prepare ➔ invoke"];
+        yourcode [label="new ➔ setConfiguration() ➔ invoke()"];
     }
-    yourcode -> "php-sap/saprfc-koucky" [lhead=cluster2 color=red];
+    yourcode -> "php-sap/saprfc-harding" [lhead=cluster2 color=red];
 }
 @enduml
