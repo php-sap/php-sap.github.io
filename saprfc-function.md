@@ -33,14 +33,6 @@ use phpsap\saprfc\SapRfc;
  */
 $function = new SapRfc('MY_COOL_SAP_REMOTE_FUNCTION');
 /**
- * SAP has a different idea than ISO about formatting dates and times. However
- * PHP/SAP has your back with \phpsap\DateTime\SapDateTime extending DateTime. 
- */
-$inputDate = new DateTime('2019-12-31');
-$function->setParams([
-    'IV_DATE' => $inputDate->format(SapDateTime::SAP_DATE)
-]);
-/**
  * The instance in `$function` has no way to establish a connection
  * because it lacks the necessary configuration. Let's add that
  * missing configuration now.
@@ -53,6 +45,14 @@ $configuration = new ConfigTypeA([
     ConfigTypeA::JSON_PASSWD => 'password'
 ]);
 $function->setConfiguration($configuration);
+/**
+ * SAP has a different idea than ISO about formatting dates and times. However
+ * PHP/SAP has your back with \phpsap\DateTime\SapDateTime extending DateTime. 
+ */
+$inputDate = new DateTime('2019-12-31');
+$function->setParams([
+    'IV_DATE' => $inputDate->format(SapDateTime::SAP_DATE)
+]);
 /**
  * Now let's encode this remote function call.
  */
@@ -85,8 +85,8 @@ Output
 ```
 
 **Attention**: An encoded SAP remote function call contains no connection
-configuration. Access data and servers may change, but the name, the API and
-the parameters are not expected to change.
+configuration. Access data and servers may change more easily than the name,
+the API and the parameters.
 
 Now let's unfreeze this SAP remote function call.
 
