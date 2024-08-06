@@ -22,6 +22,11 @@ therefore be stored as JSON by using `json_encode` on the `SapRfc` instance.
 
 Let's start with an example.
 
+**ATTENTION**:   
+Starting with PHP 8 and `php-sap/interfaces` 5.0.0 the function instance is
+created using the factory method `SapRfc::create()`.
+Before that it was `new SapRfc()`.
+
 ```php
 <?php
 use phpsap\classes\Config\ConfigTypeA;
@@ -31,7 +36,7 @@ use phpsap\saprfc\SapRfc;
  * The imaginary SAP remote function requires a
  * date as input and will return a date as output.
  */
-$function = new SapRfc('MY_COOL_SAP_REMOTE_FUNCTION');
+$function = SapRfc::create('MY_COOL_SAP_REMOTE_FUNCTION');
 /**
  * The instance in `$function` has no way to establish a connection
  * because it lacks the necessary configuration. Let's add that
