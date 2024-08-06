@@ -14,7 +14,7 @@ on the different elements of a SAP remote function call.
    need to know that. In that case it is determined automagically for you.
 
 These are the four parameters of the `SapRfc` constructor. Except for the name,
-all parameters are optional an can be set at a later time.
+all parameters are optional and can be set at a later time.
 
 The class `SapRfc` implements the [JsonSerializable interface
 ][jsonserializable]. The remote function call name, its parameters and API can
