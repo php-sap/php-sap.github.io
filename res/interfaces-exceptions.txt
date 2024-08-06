@@ -1,0 +1,25 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class IArrayElementMissingException
+class IConnectionFailedException
+class IFunctionCallException
+class IIncompleteConfigException
+class IInvalidArgumentException
+class ISapException
+class IUnknownFunctionException
+class Stringable
+class Throwable
+
+IArrayElementMissingException  -[#008200,plain]-^  ISapException
+IConnectionFailedException     -[#008200,plain]-^  ISapException
+IFunctionCallException         -[#008200,plain]-^  ISapException
+IIncompleteConfigException     -[#008200,plain]-^  ISapException
+IInvalidArgumentException      -[#008200,plain]-^  ISapException
+ISapException                  -[#008200,plain]-^  Throwable
+IUnknownFunctionException      -[#008200,plain]-^  ISapException
+Throwable                      -[#008200,plain]-^  Stringable
+@enduml

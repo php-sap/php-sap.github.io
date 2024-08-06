@@ -1,0 +1,59 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class IApi {
+   getInputElements():
+   getOutputElements():
+   add(element):
+   getTables():
+   getChangingElements():
+}
+class IApiElement {
+   getDirection():
+   isOptional():
+   getType():
+   getName():
+}
+class IJsonSerializable {
+   __construct(array):
+   jsonDecode(json):
+}
+class IMember {
+   __construct(array):
+   create(type, name):
+   cast(value):
+   getType():
+   getName():
+}
+class IStruct {
+   __construct(array):
+   create(name, direction, isOptional, members):
+   getMembers():
+   cast(value):
+}
+class ITable {
+   __construct(array):
+   create(name, direction, isOptional, members):
+   getMembers():
+   cast(value):
+}
+class IValue {
+   __construct(array):
+   create(type, name, direction, isOptional):
+   cast(value):
+}
+class JsonSerializable {
+   jsonSerialize():
+}
+
+IApi               -[#008200,plain]-^  IJsonSerializable
+IApiElement        -[#008200,plain]-^  IJsonSerializable
+IJsonSerializable  -[#008200,plain]-^  JsonSerializable
+IMember            -[#008200,plain]-^  IJsonSerializable
+IStruct            -[#008200,plain]-^  IApiElement
+ITable             -[#008200,plain]-^  IApiElement
+IValue             -[#008200,plain]-^  IApiElement
+@enduml

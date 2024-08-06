@@ -80,6 +80,7 @@ Too short? Confused? You should probably read the documentation. 😉
     - [Configure the SAP remote function call](saprfc-function)
 * [DateTime conversions for SAP](datetime)
 * [Docker images with SAP modules](docker)
+* [Implementing PHP/SAP using the interfaces](interfaces.md)
 
 [koucky]: http://saprfc.sourceforge.net/ "SAPRFC extension module for PHP"
 [harding]: https://github.com/piersharding/php-sapnwrfc "SAP RFC Connector using the SAP NW RFC SDK for PHP"

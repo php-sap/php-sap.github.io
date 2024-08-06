@@ -1,0 +1,30 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class IFunction {
+   create(name, params, config, api):
+   extractApi():
+   getApi():
+   getConfiguration():
+   getName():
+   getParams():
+   invoke():
+   resetParams():
+   setApi(api):
+   setConfiguration(config):
+   setParams(params):
+}
+class IJsonSerializable {
+   __construct(array):
+   jsonDecode(json):
+}
+class JsonSerializable {
+   jsonSerialize():
+}
+
+IFunction          -[#008200,plain]-^  IJsonSerializable
+IJsonSerializable  -[#008200,plain]-^  JsonSerializable
+@enduml

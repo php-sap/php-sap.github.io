@@ -1,0 +1,56 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class IConfigTypeA {
+   getSysnr():
+   setAshost(ashost):
+   getAshost():
+   setGwserv(gwserv):
+   setGwhost(gwhost):
+   getGwserv():
+   getGwhost():
+   setSysnr(sysnr):
+}
+class IConfigTypeB {
+   getMshost():
+   setGroup(group):
+   setMshost(mshost):
+   setR3name(r3name):
+   getGroup():
+   getR3name():
+}
+class IConfiguration {
+   __construct(array):
+   setClient(client):
+   setCodepage(codepage):
+   setTrace(trace):
+   getPasswd():
+   setSaprouter(saprouter):
+   setDest(dest):
+   setUser(user):
+   getDest():
+   setLang(lang):
+   getLang():
+   getCodepage():
+   getUser():
+   getSaprouter():
+   getTrace():
+   getClient():
+   setPasswd(passwd):
+}
+class IJsonSerializable {
+   __construct(array):
+   jsonDecode(json):
+}
+class JsonSerializable {
+   jsonSerialize():
+}
+
+IConfigTypeA       -[#008200,plain]-^  IConfiguration
+IConfigTypeB       -[#008200,plain]-^  IConfiguration
+IConfiguration     -[#008200,plain]-^  IJsonSerializable
+IJsonSerializable  -[#008200,plain]-^  JsonSerializable
+@enduml
