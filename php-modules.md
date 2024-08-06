@@ -2,11 +2,11 @@
 
 The following PHP modules are currently supported by PHP/SAP.
 
-Module Author            | Module      | supported PHP versions | PHP/SAP composer package
------------------------- | ----------- | ---------------------- | -------------------------
-[Eduard Koucky][koucky]  | `saprfc`    | PHP 4.x - 5.5.x        | [![Packagist][koucky-version-badge]][koucky-packagist]
-[Piers Harding][harding] | `sapnwrfc`  | PHP 5.x                | [![Packagist][harding-version-badge]][harding-packagist]
-[Gregor Kralik][kralik]  | `sapnwrfc`  | PHP 7.x                | [![Packagist][kralik-version-badge]][kralik-packagist]
+| Module Author            | Module     | supported PHP versions | PHP/SAP composer package                                 |
+|--------------------------|------------|------------------------|----------------------------------------------------------|
+| [Eduard Koucky][koucky]  | `saprfc`   | PHP 4.x - 5.5.x        | [![Packagist][koucky-version-badge]][koucky-packagist]   |
+| [Piers Harding][harding] | `sapnwrfc` | PHP 5.x                | [![Packagist][harding-version-badge]][harding-packagist] |
+| [Gregor Kralik][kralik]  | `sapnwrfc` | PHP 7.x - 8.x          | [![Packagist][kralik-version-badge]][kralik-packagist]   |
 
 _Please note, that none of the module authors is affiliated with PHP/SAP or involved in this project._
 
