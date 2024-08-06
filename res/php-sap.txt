@@ -7,7 +7,7 @@ digraph G {
         color=blue;
         node [color=blue];
         subgraph cluster11 {
-            label="PHP 7.x"
+            label="PHP 7.x/8.x"
             sapnwrfc7 [label="G. Kraliks sapnwrfc"];
         }
         subgraph cluster12 {
