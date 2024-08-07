@@ -31,7 +31,7 @@ digraph G {
         color=red;
         node [color=red];
         label="your code";
-        yourcode [label="new ➔ setConfiguration() ➔ invoke()"];
+        yourcode [label="create() ➔ setConfiguration() ➔ invoke()"];
     }
     yourcode -> "php-sap/saprfc-harding" [lhead=cluster2 color=red];
 }
