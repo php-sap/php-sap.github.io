@@ -6,7 +6,7 @@ and your PHP-Code.
 As to why this project has been created and which goals it
 wants to achieve, you can read the [motivation](motivation).
 
-![PHP/SAP](res/php-sap.png)
+![PHP/SAP](res/php-sap.svg)
 
 The interfaces define a common denominator on how to configure a
 connection to SAP, prepare a SAP remote function call, and invoke a SAP remote
