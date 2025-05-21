@@ -22,7 +22,7 @@ as your editor supports auto-completion for classes loaded via composer.
 use phpsap\classes\Config\ConfigTypeA;
 //Create an empty configuration object of type A.
 $config = new ConfigTypeA();
-//ConfigCommon methods are inherited by ConfigTypeA
+//IConfiguration methods are inherited by ConfigTypeA
 $config->setAshost('sap.example.com')
        ->setSysnr('999')
        ->setClient('001')
@@ -47,13 +47,13 @@ Output
 ### Get a configuration from JSON
 
 Of course the JSON encoded configuration is not a dead end. The class
-`phpsap\classes\Config\ConfigCommon` provides the method `jsonDecode($string)`
+`phpsap\interfaces\Config\IConfiguration` provides the method `jsonDecode($string)`
 for directly decoding a JSON encoded configuration into a configuration class.
 
 ```php
 <?php
-use phpsap\classes\Config\ConfigCommon;
 use phpsap\classes\Config\ConfigTypeA;
+use phpsap\interfaces\Config\IConfiguration;
 //Let's assume the JSON encoded config from before.
 $jsonConfig = '{
   "ashost": "sap.example.com",
@@ -63,10 +63,10 @@ $jsonConfig = '{
   "passwd": "password"
 }';
 /**
- * Let ConfigCommon determine the type of configuration
+ * Let IConfiguration determine the type of configuration
  * (A or B) of your formerly encoded JSON.
  */
-$configA = ConfigCommon::jsonDecode($jsonConfig);
+$configA = IConfiguration::jsonDecode($jsonConfig);
 /**
  * You can always create an instance of your config
  * using already decoded arrays ...
@@ -89,7 +89,7 @@ as your editor supports auto-completion for classes loaded via composer.
 <?php
 use phpsap\classes\Config\ConfigTypeA;
 /**
- * ConfigCommon constants are inherited by ConfigTypeA.
+ * IConfiguration constants are inherited by ConfigTypeA.
  */
 $config = new ConfigTypeA([
     ConfigTypeA::JSON_ASHOST => 'sap.example.com',
@@ -113,9 +113,9 @@ $config = new ConfigTypeA([
 
 **Common:**
 
-* `ConfigCommon::JSON_CLIENT` The destination in RfcOpen.
-* `ConfigCommon::JSON_USER` The username to use for authentication.
-* `ConfigCommon::JSON_PASSWD` The password to use for authentication.
+* `IConfiguration::JSON_CLIENT` The destination in RfcOpen.
+* `IConfiguration::JSON_USER` The username to use for authentication.
+* `IConfiguration::JSON_PASSWD` The password to use for authentication.
 
 ### Optional configuration parameters
 
@@ -131,19 +131,19 @@ $config = new ConfigTypeA([
 
 **Common:**
 
-* `ConfigCommon::JSON_TRACE` The trace level, defined by the constants in
-  `ConfigCommon`:
+* `IConfiguration::JSON_TRACE` The trace level, defined by the constants in
+  `IConfiguration`:
     - `TRACE_OFF`
     - `TRACE_BRIEF`
     - `TRACE_VERBOSE`
     - `TRACE_FULL`
-* `ConfigCommon::JSON_CODEPAGE` Only needed it if you want to connect to a
+* `IConfiguration::JSON_CODEPAGE` Only needed it if you want to connect to a
   non-Unicode backend using a non-ISO-Latin-1 username or password. The RFC
   library will then use that codepage for the initial handshake, thus
   preserving the characters in username and password.
-* `ConfigCommon::JSON_LANG` The logon Language.
-* `ConfigCommon::JSON_DEST` The destination in RfcOpenConnection.
-* `ConfigCommon::JSON_SAPROUTER` If the connection needs to be made through a
+* `IConfiguration::JSON_LANG` The logon Language.
+* `IConfiguration::JSON_DEST` The destination in RfcOpenConnection.
+* `IConfiguration::JSON_SAPROUTER` If the connection needs to be made through a
   firewall using a SAPRouter, specify the SAPRouter parameters in the following
   format: `/H/hostname/S/portnumber/H/`
 
