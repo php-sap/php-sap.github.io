@@ -16,7 +16,7 @@
 <g id="clust2" class="cluster">
 <title>cluster11</title>
 <polygon fill="none" stroke="blue" points="336,-16 336,-91 480,-91 480,-16 336,-16"/>
-<text text-anchor="middle" x="408" y="-75.8" font-family="Times,serif" font-size="14.00">PHP 7.x/8.x</text>
+<text text-anchor="middle" x="408" y="-75.8" font-family="Times,serif" font-size="14.00">PHP 8.1+</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster12</title>
@@ -38,9 +38,9 @@
 <polygon fill="none" stroke="red" points="123,-229 123,-304 383,-304 383,-229 123,-229"/>
 <text text-anchor="middle" x="253" y="-288.8" font-family="Times,serif" font-size="14.00">your code</text>
 </g>
-<!-- sapnwrfc7 -->
+<!-- sapnwrfc -->
 <g id="node1" class="node">
-<title>sapnwrfc7</title>
+<title>sapnwrfc</title>
 <polygon fill="none" stroke="blue" points="471.5,-60 344.5,-60 344.5,-24 471.5,-24 471.5,-60"/>
 <text text-anchor="middle" x="408" y="-38.3" font-family="Times,serif" font-size="14.00">G. Kraliks sapnwrfc</text>
 </g>
@@ -86,9 +86,9 @@
 <polygon fill="none" stroke="green" points="474,-159 342,-159 342,-123 474,-123 474,-159"/>
 <text text-anchor="middle" x="408" y="-137.3" font-family="Times,serif" font-size="14.00">php&#45;sap/saprfc&#45;kralik</text>
 </g>
-<!-- php&#45;sap/saprfc&#45;kralik&#45;&gt;sapnwrfc7 -->
+<!-- php&#45;sap/saprfc&#45;kralik&#45;&gt;sapnwrfc -->
 <g id="edge3" class="edge">
-<title>php&#45;sap/saprfc&#45;kralik&#45;&gt;sapnwrfc7</title>
+<title>php&#45;sap/saprfc&#45;kralik&#45;&gt;sapnwrfc</title>
 <path fill="none" stroke="green" d="M408,-122.84C408,-122.84 408,-70.04 408,-70.04"/>
 <polygon fill="green" stroke="green" points="411.5,-70.04 408,-60.04 404.5,-70.04 411.5,-70.04"/>
 </g>

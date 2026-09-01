@@ -7,8 +7,8 @@ digraph G {
         color=blue;
         node [color=blue];
         subgraph cluster11 {
-            label="PHP 7.x/8.x"
-            sapnwrfc7 [label="G. Kraliks sapnwrfc"];
+            label="PHP 8.1+"
+            sapnwrfc [label="G. Kraliks sapnwrfc"];
         }
         subgraph cluster12 {
             label="PHP 5.x"
@@ -24,7 +24,7 @@ digraph G {
             label="php-sap/common"
             "php-sap/saprfc-koucky" -> saprfc [color=green];
             "php-sap/saprfc-harding" -> sapnwrfc5 [color=green];
-            "php-sap/saprfc-kralik" -> sapnwrfc7 [color=green];
+            "php-sap/saprfc-kralik" -> sapnwrfc [color=green];
         }
     }
     subgraph cluster3 {

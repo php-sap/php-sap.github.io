@@ -8,7 +8,7 @@ Use `composer require` to add PHP/SAP to your project. Depending on the
 |---------------|------------|------------------------|--------------------------|
 | Eduard Koucky | `saprfc`   | PHP 4.x - 5.5.x        | `php-sap/saprfc-koucky`  |
 | Piers Harding | `sapnwrfc` | PHP 5.x                | `php-sap/saprfc-harding` |
-| Gregor Kralik | `sapnwrfc` | PHP 7.x - 8.x          | `php-sap/saprfc-kralik`  |
+| Gregor Kralik | `sapnwrfc` | PHP 8.1+              | `php-sap/saprfc-kralik`  |
 
 The namespace of the library is `\phpsap\saprfc`, no matter which library you use.
 
